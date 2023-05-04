@@ -38,7 +38,7 @@ const CourseStructure = () => {
           <Breadcrumb
             spacing="8px"
             separator={<ChevronRightIcon color="gray.500" />}
-            color="#235af4"
+            color="#2c698d"
             fontWeight="bold"
             fontSize="12px"
           >
@@ -89,7 +89,7 @@ const CourseStructure = () => {
             my="5"
           >
             <Flex
-              bgColor="#235af4"
+              bgColor="#2c698d"
               justify="space-between"
               align="center"
               color="white"
@@ -133,7 +133,7 @@ const CourseStructure = () => {
           </Box>
         </Box>
         <Divider />
-        <Text textAlign="center" color="#235af4" fontSize="12px" my="4">
+        <Text textAlign="center" color="#2c698d" fontSize="12px" my="4">
           Back to Course
         </Text>
       </Box>

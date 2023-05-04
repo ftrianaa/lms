@@ -69,8 +69,8 @@ const HeaderLesson = () => {
           fontWeight="bold"
         >
           <Flex align="center">
-            <Text color="#235af4">Next Lesson</Text>
-            <ChevronRightIcon color="#235af4" fontSize="25px" />
+            <Text color="#2c698d">Next Lesson</Text>
+            <ChevronRightIcon color="#2c698d" fontSize="25px" />
           </Flex>
           <Popover islazy trigger={'hover'}>
             <PopoverTrigger>
@@ -81,8 +81,8 @@ const HeaderLesson = () => {
                 borderRadius="100%"
               />
             </PopoverTrigger>
-            <PopoverContent bgColor="#235af4" w="100%" color="white">
-              <PopoverArrow bgColor="#235af4" />
+            <PopoverContent bgColor="#2c698d" w="100%" color="white">
+              <PopoverArrow bgColor="#2c698d" />
               <PopoverBody>
                 <Flex flexDir="column" gap="3">
                   <Text>Course Home</Text>
