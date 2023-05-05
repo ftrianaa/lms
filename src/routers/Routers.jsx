@@ -8,6 +8,8 @@ import Signin from '../pages/students/Signin';
 import Signup from '../pages/students/Signup';
 
 import TopicsPage from '../pages/students/Topics/Topics';
+import Profile from '../pages/students/Profile/Profile';
+import Inbox from '../pages/students/Inbox/Inbox';
 
 const Routers = () => {
   return (
@@ -18,6 +20,8 @@ const Routers = () => {
       <Route path="/signup" element={<Signup />} />
       <Route path="/courseStructure" element={<CoursesStructurePage />} />
       <Route path="/topics/:title" element={<TopicsPage />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/inbox" element={<Inbox />} />
     </Routes>
   );
 };
