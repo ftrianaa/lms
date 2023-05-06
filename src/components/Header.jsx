@@ -8,12 +8,14 @@ import {
   PopoverContent,
   PopoverTrigger,
   Spacer,
-  Text,
+  Link,
 } from '@chakra-ui/react';
 import React from 'react';
 import { BsDoorOpenFill } from 'react-icons/bs';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <Flex
       align="center"
@@ -30,13 +32,12 @@ const Header = () => {
       />
       <Spacer />
       <Flex gap="5">
-        <Text>Courses</Text>
-        <Text>After login</Text>
-        <Text>Community</Text>
+        <Link onClick={() => navigate('/courses')}>Courses</Link>
+        <Link onClick={() => navigate('/')}>After login</Link>
         <Popover islazy trigger={'hover'}>
           <PopoverTrigger>
             <Flex align="center">
-              <Text>Apps</Text>
+              <Link>Apps</Link>
               <ChevronDownIcon />
             </Flex>
           </PopoverTrigger>
@@ -44,9 +45,8 @@ const Header = () => {
             <PopoverArrow bgColor="#2c698d" />
             <PopoverBody>
               <Flex flexDir="column" gap="3">
-                <Text>Daily News</Text>
-                <Text>Best Resources</Text>
-                <Text>Other Students</Text>
+                <Link onClick={() => navigate('/news')}>Daily News</Link>
+                <Link onClick={() => navigate('/people')}>Other Students</Link>
               </Flex>
             </PopoverBody>
           </PopoverContent>
@@ -55,7 +55,7 @@ const Header = () => {
         <Popover islazy trigger={'hover'}>
           <PopoverTrigger>
             <Flex align="center">
-              <Text>Me</Text>
+              <Link>Me</Link>
               <ChevronDownIcon />
             </Flex>
           </PopoverTrigger>
@@ -63,9 +63,9 @@ const Header = () => {
             <PopoverArrow bgColor="#2c698d" />
             <PopoverBody>
               <Flex flexDir="column" gap="3">
-                <Text>Inbox</Text>
-                <Text>Profile</Text>
-                <Text>Account</Text>
+                <Link onClick={() => navigate('/inbox')}>Inbox</Link>
+                <Link onClick={() => navigate('/profile')}>Profile</Link>
+                <Link onClick={() => navigate('/account')}>Account</Link>
               </Flex>
             </PopoverBody>
           </PopoverContent>
@@ -74,7 +74,7 @@ const Header = () => {
       <Spacer />
       <Flex align="center" gap="2">
         <BsDoorOpenFill />
-        <Text>Log Out</Text>
+        <Link onClick={() => navigate('/login')}>Log Out</Link>
       </Flex>
     </Flex>
   );

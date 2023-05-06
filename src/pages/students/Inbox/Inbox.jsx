@@ -39,6 +39,7 @@ const Inbox = () => {
               variant="solid"
               color="white"
               onClick={onOpen}
+              colorScheme="blue"
             >
               New message
             </Button>
@@ -98,7 +99,13 @@ const Inbox = () => {
           <Divider my="5" />
           <Textarea h="100px" />
           <Flex align="center" justify="right" mt="5">
-            <Button bgColor="#2c698d" color="white" w="15%" fontSize="14px">
+            <Button
+              bgColor="#2c698d"
+              color="white"
+              w="15%"
+              fontSize="14px"
+              colorScheme="blue"
+            >
               Send
             </Button>
           </Flex>

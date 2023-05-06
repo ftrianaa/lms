@@ -13,10 +13,11 @@ import {
   Text,
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 const Signup = () => {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
-
+  const navigate = useNavigate();
   return (
     <>
       <Box
@@ -64,10 +65,19 @@ const Signup = () => {
                 </InputRightElement>
               </InputGroup>
             </FormControl>
-            <Button w="100%" my="5" bgColor="#2c698d" color="white">
+            <Button
+              w="100%"
+              my="5"
+              bgColor="#2c698d"
+              color="white"
+              onClick={() => navigate('/')}
+              colorScheme="blue"
+            >
               Sign up
             </Button>
-            <Link fontSize="14px">Have an account? Login </Link>
+            <Link fontSize="14px" onClick={() => navigate('/login')}>
+              Have an account? Login
+            </Link>
           </Box>
         </Container>
       </Box>

@@ -1,7 +1,4 @@
 import React from 'react';
-import Header from '../../../components/Header';
-import Footer from '../../../components/Footer';
-
 import {
   Box,
   Button,
@@ -19,7 +16,11 @@ import { GiBookshelf, GiTrophy } from 'react-icons/gi';
 import { TbActivity, TbClockFilled, TbMessages, TbUser } from 'react-icons/tb';
 import { FaUserAlt } from 'react-icons/fa';
 import { BiBadge } from 'react-icons/bi';
+import Header from '../../../../components/Header';
+import Footer from '../../../../components/Footer';
+import { useNavigate } from 'react-router-dom';
 const Profile = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Header />
@@ -94,7 +95,14 @@ const Profile = () => {
             <Text>Achievements</Text>
           </Box>
         </Flex>
-        <Button variant="solid" bgColor="#2c698d" color="white" w="25%">
+        <Button
+          variant="solid"
+          bgColor="#2c698d"
+          color="white"
+          colorScheme="blue"
+          w="25%"
+          onClick={() => navigate('/profile/edit')}
+        >
           Edit Profile
         </Button>
       </Box>

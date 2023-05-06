@@ -38,7 +38,7 @@ const NewMessage = props => {
             <Button colorScheme="red" mr={3} onClick={onClose}>
               Close
             </Button>
-            <Button bgColor="#2c698d" color="white">
+            <Button bgColor="#2c698d" color="white" colorScheme="blue">
               Send
             </Button>
           </ModalFooter>

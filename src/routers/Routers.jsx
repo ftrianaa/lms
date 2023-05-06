@@ -6,10 +6,14 @@ import CoursesStructurePage from '../pages/students/Courses/CoursesStructurePage
 import Homepage from '../pages/students/Homepage';
 import Signin from '../pages/students/Signin';
 import Signup from '../pages/students/Signup';
-
 import TopicsPage from '../pages/students/Topics/Topics';
-import Profile from '../pages/students/Profile/Profile';
 import Inbox from '../pages/students/Inbox/Inbox';
+import EditProfile from '../pages/students/Profile/MyProfile/Edit/EditProfile';
+import Profile from '../pages/students/Profile/MyProfile/Profile';
+import ProfileUser from '../pages/students/Profile/OtherProfile/ProfileUser';
+import DailyNews from '../pages/students/DailyNews/DailyNews';
+import People from '../pages/students/People/People';
+import Account from '../pages/students/Account/Account';
 
 const Routers = () => {
   return (
@@ -21,7 +25,12 @@ const Routers = () => {
       <Route path="/courseStructure" element={<CoursesStructurePage />} />
       <Route path="/topics/:title" element={<TopicsPage />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/profile/:id" element={<ProfileUser />} />
       <Route path="/inbox" element={<Inbox />} />
+      <Route path="/news" element={<DailyNews />} />
+      <Route path="/people" element={<People />} />
+      <Route path="/profile/edit" element={<EditProfile />} />
+      <Route path="/account" element={<Account />} />
     </Routes>
   );
 };
