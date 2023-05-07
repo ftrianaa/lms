@@ -1,9 +1,10 @@
 import React from 'react';
-import Header from '../../../../../components/Header';
-import Footer from '../../../../../components/Footer';
+import Header from '../../../../../components/students/Header';
+import Footer from '../../../../../components/students/Footer';
+
 import SidebarEdit from './SidebarEdit';
-import { Box, Flex, Grid, GridItem } from '@chakra-ui/react';
-import General from './Submenu/General';
+import { Flex, Grid, GridItem } from '@chakra-ui/react';
+
 import ChangePassword from './Submenu/ChangePassword';
 const EditProfile = () => {
   return (

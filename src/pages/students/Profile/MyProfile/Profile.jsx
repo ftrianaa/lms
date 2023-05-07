@@ -16,8 +16,9 @@ import { GiBookshelf, GiTrophy } from 'react-icons/gi';
 import { TbActivity, TbClockFilled, TbMessages, TbUser } from 'react-icons/tb';
 import { FaUserAlt } from 'react-icons/fa';
 import { BiBadge } from 'react-icons/bi';
-import Header from '../../../../components/Header';
-import Footer from '../../../../components/Footer';
+import Header from '../../../../components/students/Header';
+import Footer from '../../../../components/students/Footer';
+
 import { useNavigate } from 'react-router-dom';
 const Profile = () => {
   const navigate = useNavigate();
@@ -142,7 +143,7 @@ const Profile = () => {
                 </Text>
                 <Flex
                   my="5"
-                  gap="10"
+                  gap="5"
                   flexWrap="wrap"
                   align="center"
                   justify="center"

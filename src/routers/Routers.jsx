@@ -14,6 +14,9 @@ import ProfileUser from '../pages/students/Profile/OtherProfile/ProfileUser';
 import DailyNews from '../pages/students/DailyNews/DailyNews';
 import People from '../pages/students/People/People';
 import Account from '../pages/students/Account/Account';
+import DashboardPage from '../pages/teachers/Dashboard/Dashboard';
+import CoursePage from '../pages/teachers/Dashboard/Courses/Courses';
+import UserPage from '../pages/teachers/Dashboard/Users/Users';
 
 const Routers = () => {
   return (
@@ -31,6 +34,9 @@ const Routers = () => {
       <Route path="/people" element={<People />} />
       <Route path="/profile/edit" element={<EditProfile />} />
       <Route path="/account" element={<Account />} />
+      <Route path="/teacher/dashboard" element={<DashboardPage />} />
+      <Route path="/teacher/courses" element={<CoursePage />} />
+      <Route path="/teacher/users" element={<UserPage />} />
     </Routes>
   );
 };
