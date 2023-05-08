@@ -9,27 +9,11 @@ import {
   PopoverTrigger,
   Spacer,
   Text,
-  Link,
 } from '@chakra-ui/react';
 import React from 'react';
 import { BsDoorOpenFill } from 'react-icons/bs';
-import { useNavigate } from 'react-router-dom';
-import { authFirebase } from '../config/firebase';
-import { signOut } from 'firebase/auth';
 
 const Header = () => {
-  const navigate = useNavigate();
-  const handleLogout = () => {
-    signOut(authFirebase).then(() => {
-      // Sign-out successful.
-      alert('Logout Succeess')
-      localStorage.removeItem('user')
-    }).catch((error) => {
-      // An error happened.
-      alert(error.message)
-    })
-  };
-
   return (
     <Flex
       align="center"
@@ -46,7 +30,9 @@ const Header = () => {
       />
       <Spacer />
       <Flex gap="5">
-        <Text onClick={()=>navigate('/courses')}>Courses</Text>
+        <Text>Courses</Text>
+        <Text>After login</Text>
+        <Text>Community</Text>
         <Popover islazy trigger={'hover'}>
           <PopoverTrigger>
             <Flex align="center">
@@ -88,7 +74,7 @@ const Header = () => {
       <Spacer />
       <Flex align="center" gap="2">
         <BsDoorOpenFill />
-        {authFirebase.currentUser ? <Text cursor='pointer' onClick={handleLogout}>Log Out</Text> : <Link href="login">Login</Link>}
+        <Text>Log Out</Text>
       </Flex>
     </Flex>
   );

@@ -20,7 +20,7 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import React from 'react';
-import Header from '../../../components/Header';
+import Header from '../../../components/students/Header';
 import {
   BsCircle,
   BsFileCheck,
@@ -28,7 +28,7 @@ import {
   BsJournalBookmarkFill,
 } from 'react-icons/bs';
 import { ChevronDownIcon } from '@chakra-ui/icons';
-import Footer from '../../../components/Footer';
+import Footer from '../../../components/students/Footer';
 
 const Courses = () => {
   return (
