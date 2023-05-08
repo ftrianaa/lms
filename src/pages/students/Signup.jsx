@@ -12,10 +12,33 @@ import {
   Link,
   Text,
 } from '@chakra-ui/react';
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth'
+import { useNavigate } from 'react-router-dom';
+import { authFirebase } from '../../config/firebase'
+
 const Signup = () => {
-  const [show, setShow] = useState(false);
-  const handleClick = () => setShow(!show);
+  const [showPassword, setShowPassword] = useState(false);
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const _showPassword = () => setShowPassword(!showPassword);
+  const navigate = useNavigate();
+  const renderRef = useRef()
+
+    console.count('render : ', renderRef.current)
+
+  const _signUp = async () => {
+    console.log({email})
+    console.log({password})
+    createUserWithEmailAndPassword(authFirebase, email, password).then(response => {
+      navigate('/')
+      localStorage.setItem('user', JSON.stringify(response.user))
+    }).catch(error =>{
+      console.log(error.message)
+      alert(error.message)
+    })
+  }
 
   return (
     <>
@@ -43,31 +66,32 @@ const Signup = () => {
           >
             <FormControl>
               <FormLabel>Name</FormLabel>
-              <Input type="text" placeholder="Enter name" />
+              <Input type="text" placeholder="Enter name" onChange={useCallback((e)=>{setName(e.target.value)},[])}/>
             </FormControl>
             <FormControl>
               <FormLabel>Email</FormLabel>
-              <Input type="email" placeholder="Enter email" />
+              <Input type="email" placeholder="Enter email" onChange={e=>setEmail(e.target.value)}/>
             </FormControl>
             <FormControl>
               <FormLabel>Password</FormLabel>
               <InputGroup size="md">
                 <Input
                   pr="4.5rem"
-                  type={show ? 'text' : 'password'}
+                  type={showPassword ? 'text' : 'password'}
                   placeholder="Enter password"
+                  onChange={useCallback((e)=>{setPassword(e.target.value)},[])}
                 />
                 <InputRightElement width="4.5rem">
-                  <Button h="1.75rem" size="sm" onClick={handleClick}>
-                    {show ? <ViewIcon /> : <ViewOffIcon />}
+                  <Button h="1.75rem" size="sm" onClick={_showPassword}>
+                    {showPassword ? <ViewIcon /> : <ViewOffIcon />}
                   </Button>
                 </InputRightElement>
               </InputGroup>
             </FormControl>
-            <Button w="100%" my="5" bgColor="#2c698d" color="white">
+            <Button w="100%" my="5" bgColor="#2c698d" color="white" onClick={()=>_signUp()}>
               Sign up
             </Button>
-            <Link fontSize="14px">Have an account? Login </Link>
+            <Link fontSize="14px" href="/login">Have an account? Login </Link>
           </Box>
         </Container>
       </Box>

@@ -16,14 +16,24 @@ import {
 } from '@chakra-ui/react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import Sidebar from '../../../components/students/Sidebar';
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+
+
 
 const Topics = () => {
+  const {title} = useParams();
+
+  useEffect(()=>{
+    console.log("title", title)
+  },[])
+
   return (
     <>
       <HeaderLesson />
       <Box w="90%" m="auto">
         <Heading fontSize="48px" fontWeight="normal">
-          Example Topic with a Video
+          {title}
         </Heading>
 
         <Flex
