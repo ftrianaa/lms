@@ -22,29 +22,21 @@ import {
   MenuItem,
   MenuList,
 } from '@chakra-ui/react';
-import {
-  FiHome,
-  FiTrendingUp,
-  FiCompass,
-  FiStar,
-  FiSettings,
-  FiMenu,
-  FiBell,
-  FiChevronDown,
-} from 'react-icons/fi';
+import { FiHome, FiMenu, FiBell, FiChevronDown } from 'react-icons/fi';
+import { RiFileList2Line } from 'react-icons/ri';
 import { IconType } from 'react-icons';
 import { ReactText } from 'react';
-
+import { BsDoorOpenFill } from 'react-icons/bs';
 interface LinkItemProps {
   name: string;
   icon: IconType;
 }
 const LinkItems: Array<LinkItemProps> = [
-  { name: 'Home', icon: FiHome },
-  { name: 'Trending', icon: FiTrendingUp },
-  { name: 'Explore', icon: FiCompass },
-  { name: 'Favourites', icon: FiStar },
-  { name: 'Settings', icon: FiSettings },
+  { name: 'Dashboard', icon: FiHome },
+  { name: 'Course', icon: RiFileList2Line },
+  // { name: 'Explore', icon: FiCompass },
+  // { name: 'Favourites', icon: FiStar },
+  { name: 'Logout', icon: BsDoorOpenFill },
 ];
 
 export default function Sidebar({ children }: { children: ReactNode }) {

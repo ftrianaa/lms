@@ -3,7 +3,6 @@ import Sidebar from '../../../../components/teachers/Sidebar';
 import {
   Box,
   Button,
-  Card,
   Flex,
   Image,
   Input,
@@ -20,19 +19,18 @@ import {
   Tag,
   Tbody,
   Td,
-  Text,
   Th,
   Thead,
   Tooltip,
   Tr,
-  Wrap,
 } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
 import { TfiPencil } from 'react-icons/tfi';
 import { FiMoreHorizontal } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Courses = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Flex gap="3">
@@ -91,7 +89,10 @@ const Courses = () => {
                 <Td>
                   <Flex gap="2">
                     <Tooltip label="Edit" fontSize="md">
-                      <Button size="sm">
+                      <Button
+                        size="sm"
+                        onClick={() => navigate('/teacher/courses/edit')}
+                      >
                         <TfiPencil />
                       </Button>
                     </Tooltip>

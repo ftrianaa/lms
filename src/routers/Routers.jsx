@@ -18,6 +18,10 @@ import DashboardPage from '../pages/teachers/Dashboard/Dashboard';
 import CoursePage from '../pages/teachers/Dashboard/Courses/Courses';
 import UserPage from '../pages/teachers/Dashboard/Users/Users';
 
+import EditCoursesPage from '../pages/teachers/Dashboard/Courses/EditCourses';
+import CreateCoursesPage from '../pages/teachers/Dashboard/Courses/CreateCourse';
+import CreateUsersPage from '../pages/teachers/Dashboard/Users/CreateUsers';
+
 const Routers = () => {
   return (
     <Routes>
@@ -36,7 +40,10 @@ const Routers = () => {
       <Route path="/account" element={<Account />} />
       <Route path="/teacher/dashboard" element={<DashboardPage />} />
       <Route path="/teacher/courses" element={<CoursePage />} />
+      <Route path="/teacher/courses/edit" element={<EditCoursesPage />} />
+      <Route path="/teacher/courses/create" element={<CreateCoursesPage />} />
       <Route path="/teacher/users" element={<UserPage />} />
+      <Route path="/teacher/users/create" element={<CreateUsersPage />} />
     </Routes>
   );
 };

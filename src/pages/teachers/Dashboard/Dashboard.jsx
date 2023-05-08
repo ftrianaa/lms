@@ -10,7 +10,6 @@ import {
   Tabs,
   Text,
   VStack,
-  Wrap,
   GridItem,
   Card,
   CardHeader,
@@ -22,7 +21,7 @@ import {
   Spacer,
 } from '@chakra-ui/react';
 import React from 'react';
-import { FaSchool, FaUserAlt } from 'react-icons/fa';
+import { FaSchool } from 'react-icons/fa';
 import { TfiAnnouncement, TfiCalendar, TfiReload } from 'react-icons/tfi';
 import Sidebar from '../../../components/teachers/Sidebar';
 import { BsCircleFill, BsHandbag, BsTag } from 'react-icons/bs';

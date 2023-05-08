@@ -1,4 +1,4 @@
-import { VStack, Link, Flex } from '@chakra-ui/react';
+import { Link, Flex } from '@chakra-ui/react';
 import React from 'react';
 
 const SidebarEdit = () => {
