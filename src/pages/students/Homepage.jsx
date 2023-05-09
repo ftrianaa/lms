@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../../components/Header';
 import {
 	Box,
 	Button,
@@ -22,6 +21,7 @@ import { EmailIcon, SearchIcon } from '@chakra-ui/icons';
 import { useNavigate } from 'react-router-dom';
 import { collection, getDocs, query } from 'firebase/firestore';
 import { db } from '../../config/firebase';
+import Header from '../../components/students/Header';
 
 const Homepage = () => {
 	const navigate = useNavigate();

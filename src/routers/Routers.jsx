@@ -27,7 +27,7 @@ import { useAuthContext } from '../../src/context/context'
 import ProtectedRoutes from '../../src/routers/ProtectedRoutes';
 
 const Routers = () => {
-	const { user } = useAuthContext();
+	const user = useAuthContext();
 	return (
 		<Routes>
 			<Route exact path="/" element={
@@ -35,28 +35,28 @@ const Routers = () => {
 			} />
 			<Route path="/courses" element={
 				<ProtectedRoutes
-				user={user}
-                redirectPath={"/login"}>
+					user={user}
+					redirectPath={"/login"}>
 					<Courses />
 				</ProtectedRoutes>
 			} />
 			<Route path="/login" element={<Signin />} />
 			<Route path="/signup" element={<Signup />} />
-			<Route path="/courses/:id" element={<CoursesStructurePage />} />
-			<Route path="/courses/:course_id/topics/:topic_id" element={<TopicsPage />} />
-      <Route path="/profile" element={<Profile />} />
-      <Route path="/profile/:id" element={<ProfileUser />} />
-      <Route path="/inbox" element={<Inbox />} />
-      <Route path="/news" element={<DailyNews />} />
-      <Route path="/people" element={<People />} />
-      <Route path="/profile/edit" element={<EditProfile />} />
-      <Route path="/account" element={<Account />} />
-      <Route path="/teacher/dashboard" element={<DashboardPage />} />
-      <Route path="/teacher/courses" element={<CoursePage />} />
-      <Route path="/teacher/courses/edit" element={<EditCoursesPage />} />
-      <Route path="/teacher/courses/create" element={<CreateCoursesPage />} />
-      <Route path="/teacher/users" element={<UserPage />} />
-      <Route path="/teacher/users/create" element={<CreateUsersPage />} />
+			<Route path="/courses/:course_id" element={<CoursesStructurePage />} />
+			<Route path="/courses/:course_id/sections/:section_id" element={<TopicsPage />} />
+			<Route path="/profile" element={<Profile />} />
+			<Route path="/profile/:id" element={<ProfileUser />} />
+			<Route path="/inbox" element={<Inbox />} />
+			<Route path="/news" element={<DailyNews />} />
+			<Route path="/people" element={<People />} />
+			<Route path="/profile/edit" element={<EditProfile />} />
+			<Route path="/account" element={<Account />} />
+			<Route path="/teacher/dashboard" element={<DashboardPage />} />
+			<Route path="/teacher/courses" element={<CoursePage />} />
+			<Route path="/teacher/courses/edit" element={<EditCoursesPage />} />
+			<Route path="/teacher/courses/create" element={<CreateCoursesPage />} />
+			<Route path="/teacher/users" element={<UserPage />} />
+			<Route path="/teacher/users/create" element={<CreateUsersPage />} />
 		</Routes>
 	);
 };

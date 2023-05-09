@@ -26,11 +26,11 @@ const CourseStructure = () => {
 	const {state : {title}} = useLocation()
 
 	const getTopics = async () => {
-		const q = query(collection(db, 'courses', params.id, 'materials'))
+		const q = query(collection(db, 'courses', params.course_id, 'sections'))
 		const querySnapshot = await getDocs(q)
 		let arr = []
-		querySnapshot.forEach((doc)=>{
-			arr.push({id: doc.id, ...doc.data()})
+		querySnapshot.forEach((doc) => {
+			arr.push({ id: doc.id, ...doc.data() })
 		})
 
 		setTopics(arr)
@@ -68,11 +68,11 @@ const CourseStructure = () => {
 						fontSize="12px"
 					>
 						<BreadcrumbItem>
-							<BreadcrumbLink href="/">Free Course Demo</BreadcrumbLink>
+							<BreadcrumbLink href="/courses">Courses</BreadcrumbLink>
 						</BreadcrumbItem>
 
 						<BreadcrumbItem>
-							<BreadcrumbLink href="#">Course Structure</BreadcrumbLink>
+							<BreadcrumbLink href={`/courses/${title}`}>{title}</BreadcrumbLink>
 						</BreadcrumbItem>
 					</Breadcrumb>
 
@@ -136,7 +136,7 @@ const CourseStructure = () => {
 						<Box p="5">
 							{topics.map((item, i) => (
 								<>
-									<Flex key={i} gap="2" align="center" cursor='pointer' onClick={() => navigate(`topics/${item.title}`)}>
+									<Flex key={i} gap="2" align="center" cursor='pointer' onClick={() => navigate(`sections/${item.id}`, { state: { section_title: item.title } })}>
 										<BsCircle />
 										<Text>
 											{item.title}
