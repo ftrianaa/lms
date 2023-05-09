@@ -24,6 +24,7 @@ import CreateTopicsPage from '../pages/teachers/Dashboard/Topics/CreateTopics';
 import LessonsPage from '../pages/teachers/Dashboard/Lessons/Lessons';
 import EditLessonsPage from '../pages/teachers/Dashboard/Lessons/EditLessons';
 import EditCoursesPage from '../pages/teachers/Dashboard/Courses/EditCourses';
+import Topics from '../pages/teachers/Dashboard/Topics/Topics';
 
 const Routers = () => {
   return (
@@ -48,6 +49,8 @@ const Routers = () => {
       <Route path="/teacher/lessons" element={<LessonsPage />} />
       <Route path="/teacher/lessons/create" element={<CreateLessonsPage />} />
       <Route path="/teacher/lessons/edit" element={<EditLessonsPage />} />
+      <Route path="/teacher/topics" element={<Topics />} />
+
       <Route path="/teacher/topics/create" element={<CreateTopicsPage />} />
       <Route path="/teacher/users" element={<UserPage />} />
       <Route path="/teacher/users/create" element={<CreateUsersPage />} />
