@@ -13,7 +13,7 @@ import Sidebar from '../../../../components/teachers/Sidebar';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { useNavigate } from 'react-router-dom';
 
-const EditCourses = () => {
+const CreateCourses = () => {
   const navigate = useNavigate();
   return (
     <Box>
@@ -43,18 +43,18 @@ const EditCourses = () => {
             colorScheme="blue"
             onClick={() => navigate('/teacher/lessons/create')}
           >
-            Save
+            Next
           </Button>
         </Flex>
       </Container>
     </Box>
   );
 };
-const EditCoursesPage = () => {
+const CreateCoursesPage = () => {
   return (
     <Sidebar>
-      <EditCourses />
+      <CreateCourses />
     </Sidebar>
   );
 };
-export default EditCoursesPage;
+export default CreateCoursesPage;

@@ -15,12 +15,15 @@ import DailyNews from '../pages/students/DailyNews/DailyNews';
 import People from '../pages/students/People/People';
 import Account from '../pages/students/Account/Account';
 import DashboardPage from '../pages/teachers/Dashboard/Dashboard';
-import CoursePage from '../pages/teachers/Dashboard/Courses/Courses';
 import UserPage from '../pages/teachers/Dashboard/Users/Users';
-
-import EditCoursesPage from '../pages/teachers/Dashboard/Courses/EditCourses';
-import CreateCoursesPage from '../pages/teachers/Dashboard/Courses/CreateCourse';
 import CreateUsersPage from '../pages/teachers/Dashboard/Users/CreateUsers';
+import CoursesPages from '../pages/teachers/Dashboard/Courses/Courses';
+import CreateCoursesPage from '../pages/teachers/Dashboard/Courses/CreateCourses';
+import CreateLessonsPage from '../pages/teachers/Dashboard/Lessons/CreateLessons';
+import CreateTopicsPage from '../pages/teachers/Dashboard/Topics/CreateTopics';
+import LessonsPage from '../pages/teachers/Dashboard/Lessons/Lessons';
+import EditLessonsPage from '../pages/teachers/Dashboard/Lessons/EditLessons';
+import EditCoursesPage from '../pages/teachers/Dashboard/Courses/EditCourses';
 
 const Routers = () => {
   return (
@@ -39,9 +42,13 @@ const Routers = () => {
       <Route path="/profile/edit" element={<EditProfile />} />
       <Route path="/account" element={<Account />} />
       <Route path="/teacher/dashboard" element={<DashboardPage />} />
-      <Route path="/teacher/courses" element={<CoursePage />} />
-      <Route path="/teacher/courses/edit" element={<EditCoursesPage />} />
+      <Route path="/teacher/courses" element={<CoursesPages />} />
       <Route path="/teacher/courses/create" element={<CreateCoursesPage />} />
+      <Route path="/teacher/courses/edit" element={<EditCoursesPage />} />
+      <Route path="/teacher/lessons" element={<LessonsPage />} />
+      <Route path="/teacher/lessons/create" element={<CreateLessonsPage />} />
+      <Route path="/teacher/lessons/edit" element={<EditLessonsPage />} />
+      <Route path="/teacher/topics/create" element={<CreateTopicsPage />} />
       <Route path="/teacher/users" element={<UserPage />} />
       <Route path="/teacher/users/create" element={<CreateUsersPage />} />
     </Routes>

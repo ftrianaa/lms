@@ -1,13 +1,12 @@
-import React from 'react';
-import Sidebar from '../../../../components/teachers/Sidebar';
 import {
   Box,
   Button,
+  Checkbox,
   Flex,
-  Image,
   Input,
   InputGroup,
   InputLeftElement,
+  Link,
   Popover,
   PopoverArrow,
   PopoverBody,
@@ -24,12 +23,14 @@ import {
   Tooltip,
   Tr,
 } from '@chakra-ui/react';
-import { AddIcon, SearchIcon } from '@chakra-ui/icons';
+import React from 'react';
+import Sidebar from '../../../../components/teachers/Sidebar';
 import { TfiPencil } from 'react-icons/tfi';
 import { FiMoreHorizontal } from 'react-icons/fi';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { AddIcon, SearchIcon } from '@chakra-ui/icons';
 
-const Courses = () => {
+const Lessons = () => {
   const navigate = useNavigate();
   return (
     <>
@@ -45,10 +46,7 @@ const Courses = () => {
           <option>All courses</option>
           <option>New courses</option>
         </Select>
-        <Select w="fit-content">
-          <option>All categories</option>
-          <option>New courses</option>
-        </Select>
+
         <Select w="fit-content">
           <option>All authors</option>
           <option>New authors</option>
@@ -56,17 +54,16 @@ const Courses = () => {
       </Flex>
       <Flex align="center" justify="space-between">
         <Tag color="white" bgColor="#2c698d" my="5">
-          Showing 1 courses
+          Showing 1 lessons
         </Tag>
         <Link
-          color="white"
-          bgColor="#2c698d"
           my="5"
+          color="#2c698d"
           fontSize="14px"
-          onClick={() => navigate('/teacher/courses/create')}
+          onClick={() => navigate('/teacher/lessons/create')}
         >
           <AddIcon mx="2" />
-          Add courses
+          Add lessons
         </Link>
       </Flex>
       <Box>
@@ -74,36 +71,35 @@ const Courses = () => {
           <Table size="sm">
             <Thead>
               <Tr>
+                <Th>
+                  <Checkbox />
+                </Th>
                 <Th>Title</Th>
                 <Th>Author</Th>
-                <Th>Categories</Th>
-                <Th>Learners</Th>
+                <Th>Course</Th>
+                <Th>Description</Th>
                 <Th>Created</Th>
-                <Th>Updated</Th>
                 <Th>Actions</Th>
               </Tr>
             </Thead>
             <Tbody>
               <Tr>
                 <Td>
-                  <Image
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-W6CbBQEEsX3mrCgYAOdTY0wvYqhZtkOd79QvMcQAsg&s"
-                    alt="img-course"
-                    w="100px"
-                    maxH="200px"
-                  />
+                  <Checkbox />
                 </Td>
+                <Td>Grammar</Td>
                 <Td>User1</Td>
-                <Td>New Courses</Td>
-                <Td>2</Td>
-                <Td>02 Februari 2023</Td>
-                <Td>08 Mei 2023</Td>
+                <Td>
+                  <Link>English</Link>
+                </Td>
+                <Td>We learn about grammar...</Td>
+                <Td>{new Date().toLocaleString() + ''}</Td>
                 <Td>
                   <Flex gap="2">
                     <Tooltip label="Edit" fontSize="md">
                       <Button
                         size="sm"
-                        onClick={() => navigate('/teacher/courses/edit')}
+                        onClick={() => navigate('/teacher/lessons/edit')}
                       >
                         <TfiPencil />
                       </Button>
@@ -137,11 +133,11 @@ const Courses = () => {
   );
 };
 
-const CoursesPages = () => {
+const LessonsPage = () => {
   return (
     <Sidebar>
-      <Courses />
+      <Lessons />
     </Sidebar>
   );
 };
-export default CoursesPages;
+export default LessonsPage;
