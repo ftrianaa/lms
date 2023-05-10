@@ -34,13 +34,13 @@ const CourseStructure = () => {
 		})
 
 		setTopics(arr)
-	}
+	};
 
 
 
 	useEffect(()=>{
 		if (topics.length === 0) getTopics()
-	},[])
+	},[]);
 
 	return (
 		<>

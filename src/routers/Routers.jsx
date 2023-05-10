@@ -25,6 +25,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { authFirebase } from '../config/firebase';
 import { useAuthContext } from '../../src/context/context'
 import ProtectedRoutes from '../../src/routers/ProtectedRoutes';
+import LessonPage from '../pages/teachers/Dashboard/Courses/LessonPage';
 
 const Routers = () => {
 	const user = useAuthContext();
@@ -44,6 +45,7 @@ const Routers = () => {
 			<Route path="/signup" element={<Signup />} />
 			<Route path="/courses/:course_id" element={<CoursesStructurePage />} />
 			<Route path="/courses/:course_id/sections/:section_id" element={<TopicsPage />} />
+			<Route path="/courses/:course_id/sections/:section_id/lesson/:lesson_id" element={<LessonPage />} />
 			<Route path="/profile" element={<Profile />} />
 			<Route path="/profile/:id" element={<ProfileUser />} />
 			<Route path="/inbox" element={<Inbox />} />
