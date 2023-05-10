@@ -3,34 +3,55 @@ import Sidebar from '../../../../components/teachers/Sidebar';
 import {
   Box,
   Button,
+  Card,
+  CardBody,
+  Circle,
+  Divider,
   Flex,
+  HStack,
+  Heading,
   Image,
   Input,
   InputGroup,
   InputLeftElement,
+  Link,
   Popover,
   PopoverArrow,
   PopoverBody,
   PopoverContent,
   PopoverTrigger,
   Select,
+  Stack,
+  StackDivider,
   Table,
   TableContainer,
   Tag,
   Tbody,
   Td,
+  Text,
   Th,
   Thead,
   Tooltip,
   Tr,
+  VStack,
 } from '@chakra-ui/react';
-import { AddIcon, SearchIcon } from '@chakra-ui/icons';
+import {
+  AddIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+  SearchIcon,
+} from '@chakra-ui/icons';
 import { TfiPencil } from 'react-icons/tfi';
 import { FiMoreHorizontal } from 'react-icons/fi';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { BsCircle, BsFileCheck, BsFileText } from 'react-icons/bs';
+import { useState } from 'react';
 
 const Courses = () => {
   const navigate = useNavigate();
+  const [expand, setExpand] = useState(false);
+  const [topic, setTopic] = useState(0);
+  console.log(expand, 'n exp');
   return (
     <>
       <Flex gap="3">
@@ -60,17 +81,244 @@ const Courses = () => {
         </Tag>
         <Link
           color="white"
-          bgColor="#2c698d"
+          // bgColor="#2c698d"
           my="5"
           fontSize="14px"
           onClick={() => navigate('/teacher/courses/create')}
+          // href="/sxx"
+          // to="/teacher/courses/create"
         >
           <AddIcon mx="2" />
-          Add courses
+          Add New Course
         </Link>
       </Flex>
       <Box>
-        <TableContainer>
+        <Flex gap="2">
+          <Heading>01</Heading>
+          <Heading fontWeight="bold">English</Heading>
+        </Flex>
+        <Card p="5" gap="5" display="flex" m="0">
+          <Flex justify="space-between" align="start">
+            <Box>
+              <Flex gap="2" align="center">
+                <BsCircle />
+                <Flex flexDir="column">
+                  <Text m="0">Grammar</Text>
+                  <HStack
+                    divider={<StackDivider />}
+                    fontSize="13.2px"
+                    color="#728188"
+                    fontWeight="bold"
+                  >
+                    <Text m="0">2 Topics</Text>
+                    <Text m="0">1 Quiz</Text>
+                  </HStack>
+                </Flex>
+              </Flex>
+              {expand ? (
+                <Box>
+                  <Box p="5">
+                    <Flex align="center" gap="2">
+                      <BsFileText />
+                      <Text m="0">Topics</Text>
+                    </Flex>
+                  </Box>
+                  <Box px="5">
+                    <Flex gap="2" align="center">
+                      <BsCircle />
+                      <Flex flexDir="column">
+                        <Text m="0">Present tense</Text>
+                      </Flex>
+                    </Flex>
+                    <Flex gap="2" align="center" my="2">
+                      <BsCircle />
+                      <Flex flexDir="column">
+                        <Text m="0">Past tense</Text>
+                      </Flex>
+                    </Flex>
+                  </Box>
+                  <Box p="5">
+                    <Flex align="center" gap="2">
+                      <BsFileText />
+                      <Text m="0">Quiz</Text>
+                    </Flex>
+                  </Box>
+                  <Box p="5">
+                    <Flex gap="2" align="center">
+                      <BsFileCheck fontSize="18px" />
+                      <Text m="0">Final Quiz </Text>
+                    </Flex>
+                  </Box>
+                </Box>
+              ) : (
+                <></>
+              )}
+            </Box>
+            {!expand ? (
+              <Flex
+                fontWeight="bold"
+                align="center"
+                gap="1"
+                onClick={() => setExpand(true)}
+                cursor="pointer"
+                my="5"
+              >
+                <Box>
+                  <Circle bgColor="#235af4">
+                    <ChevronDownIcon color="white" fontSize="18px" />
+                  </Circle>
+                </Box>
+                <Text color="#235af4" fontSize="12px" m="0">
+                  Expand
+                </Text>
+              </Flex>
+            ) : (
+              <Flex
+                fontWeight="bold"
+                align="center"
+                gap="1"
+                onClick={() => setExpand(false)}
+                cursor="pointer"
+                my="5"
+              >
+                <Box>
+                  <Circle bgColor="#235af4">
+                    <ChevronUpIcon color="white" fontSize="18px" />
+                  </Circle>
+                </Box>
+                <Text color="#235af4" fontSize="12px" m="0">
+                  Collapse
+                </Text>
+              </Flex>
+            )}
+          </Flex>
+        </Card>
+        {topic >= 1 ? (
+          Array.from(Array(topic), (e, i) => (
+            <Box key={i} my="5">
+              <Flex gap="2">
+                <Heading>01</Heading>
+                <Heading fontWeight="bold">English</Heading>
+              </Flex>
+              <Card p="5" gap="5" display="flex" m="0">
+                <Flex justify="space-between" align="start">
+                  <Flex gap="2" align="center">
+                    <BsCircle />
+                    <Flex flexDir="column">
+                      <Text m="0">Grammar</Text>
+                      <HStack
+                        divider={<StackDivider />}
+                        fontSize="13.2px"
+                        color="#728188"
+                        fontWeight="bold"
+                      >
+                        <Text m="0">2 Topics</Text>
+                        <Text m="0">1 Quiz</Text>
+                      </HStack>
+                    </Flex>
+                  </Flex>
+                </Flex>
+                {expand ? (
+                  <Box>
+                    <Box p="5">
+                      <Flex align="center" gap="2">
+                        <BsFileText />
+                        <Text m="0">Topics</Text>
+                      </Flex>
+                    </Box>
+                    <Box px="5">
+                      <Flex gap="2" align="center">
+                        <BsCircle />
+                        <Flex flexDir="column">
+                          <Text m="0">Present tense</Text>
+                        </Flex>
+                      </Flex>
+                      <Flex gap="2" align="center" my="2">
+                        <BsCircle />
+                        <Flex flexDir="column">
+                          <Text m="0">Past tense</Text>
+                        </Flex>
+                      </Flex>
+                    </Box>
+                    <Flex align="center" justify="space-between">
+                      <Divider borderColor="#2c698d" w="45%" />
+                      <Link fontSize="12px">Add Topic</Link>
+                      <Divider borderColor="#2c698d" w="45%" />
+                    </Flex>
+                    <Box p="5">
+                      <Flex align="center" gap="2">
+                        <BsFileText />
+                        <Text m="0">Quiz</Text>
+                      </Flex>
+                    </Box>
+                    <Box p="5">
+                      <Flex gap="2" align="center">
+                        <BsFileCheck fontSize="18px" />
+                        <Text m="0">Final Quiz </Text>
+                      </Flex>
+                    </Box>
+                    <Flex align="center" justify="space-between">
+                      <Divider borderColor="#2c698d" w="45%" />
+                      <Link fontSize="12px">Add Lessons</Link>
+                      <Divider borderColor="#2c698d" w="45%" />
+                    </Flex>
+                  </Box>
+                ) : (
+                  <></>
+                )}
+
+                {!expand ? (
+                  <Flex
+                    fontWeight="bold"
+                    align="center"
+                    gap="1"
+                    onClick={() => setExpand(true)}
+                    cursor="pointer"
+                    my="5"
+                  >
+                    <Box>
+                      <Circle bgColor="#235af4">
+                        <ChevronDownIcon color="white" fontSize="18px" />
+                      </Circle>
+                    </Box>
+                    <Text color="#235af4" fontSize="12px" m="0">
+                      Expand
+                    </Text>
+                  </Flex>
+                ) : (
+                  <Flex
+                    fontWeight="bold"
+                    align="center"
+                    gap="1"
+                    onClick={() => setExpand(false)}
+                    cursor="pointer"
+                    my="5"
+                  >
+                    <Box>
+                      <Circle bgColor="#235af4">
+                        <ChevronUpIcon color="white" fontSize="18px" />
+                      </Circle>
+                    </Box>
+                    <Text color="#235af4" fontSize="12px" m="0">
+                      Collapse
+                    </Text>
+                  </Flex>
+                )}
+              </Card>
+            </Box>
+          ))
+        ) : (
+          <></>
+        )}
+        <Flex align="center" justify="space-between">
+          <Divider borderColor="#2c698d" w="45%" />
+
+          <Link fontSize="12px" onClick={() => setTopic(topic + 1)}>
+            Add Courses
+          </Link>
+          <Divider borderColor="#2c698d" w="45%" />
+        </Flex>
+        {/* <TableContainer>
           <Table size="sm">
             <Thead>
               <Tr>
@@ -131,7 +379,7 @@ const Courses = () => {
               </Tr>
             </Tbody>
           </Table>
-        </TableContainer>
+        </TableContainer> */}
       </Box>
     </>
   );

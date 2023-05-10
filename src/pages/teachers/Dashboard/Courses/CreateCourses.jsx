@@ -41,9 +41,9 @@ const CreateCourses = () => {
             color="white"
             bgColor="#2c698d"
             colorScheme="blue"
-            onClick={() => navigate('/teacher/lessons/create')}
+            onClick={() => navigate('/teacher/courses/english')}
           >
-            Next
+            Confirm
           </Button>
         </Flex>
       </Container>

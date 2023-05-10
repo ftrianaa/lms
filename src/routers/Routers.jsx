@@ -25,6 +25,7 @@ import LessonsPage from '../pages/teachers/Dashboard/Lessons/Lessons';
 import EditLessonsPage from '../pages/teachers/Dashboard/Lessons/EditLessons';
 import EditCoursesPage from '../pages/teachers/Dashboard/Courses/EditCourses';
 import Topics from '../pages/teachers/Dashboard/Topics/Topics';
+import SingleCoursePage from '../pages/teachers/Dashboard/Courses/SingleCourse';
 
 const Routers = () => {
   return (
@@ -45,6 +46,9 @@ const Routers = () => {
       <Route path="/teacher/dashboard" element={<DashboardPage />} />
       <Route path="/teacher/courses" element={<CoursesPages />} />
       <Route path="/teacher/courses/create" element={<CreateCoursesPage />} />
+      <Route path="/teacher/courses/:id" element={<SingleCoursePage />} />
+
+      {/* course - section - lesson */}
       <Route path="/teacher/courses/edit" element={<EditCoursesPage />} />
       <Route path="/teacher/lessons" element={<LessonsPage />} />
       <Route path="/teacher/lessons/create" element={<CreateLessonsPage />} />
