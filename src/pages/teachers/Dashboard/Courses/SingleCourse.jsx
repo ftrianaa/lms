@@ -2,6 +2,7 @@ import React from 'react';
 import Sidebar from '../../../../components/teachers/Sidebar';
 import {
   Box,
+  Button,
   Card,
   Circle,
   Divider,
@@ -174,6 +175,16 @@ const SingleCourse = () => {
           </Link>
         </Card>
       </Box>
+      <Flex my="5" align="center" justify="right">
+        <Button
+          colorScheme="blue"
+          color="white"
+          bgColor="#2c698d"
+          onClick={() => navigate('/teacher/courses')}
+        >
+          Done
+        </Button>
+      </Flex>
       {modals === 'lesson' ? (
         <ModalLesson isOpen={isOpen} onClose={onClose} setModals={setModals} />
       ) : modals === 'topics' ? (
