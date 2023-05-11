@@ -24,6 +24,7 @@ import { BsCircle, BsFileCheck, BsFileText } from 'react-icons/bs';
 import { useState } from 'react';
 import ModalLesson from '../Lessons/ModalLesson';
 import ModalTopics from '../Topics/ModalTopics';
+import ModalQuiz from '../Quiz/ModalQuiz';
 
 const SingleCourse = () => {
   const navigate = useNavigate();
@@ -141,11 +142,21 @@ const SingleCourse = () => {
                   <Text m="0">Quiz</Text>
                 </Flex>
               </Box>
-              <Box mx="5">
-                <Flex gap="2" align="center">
+              <Box px="5">
+                <Flex gap="2" align="center" my="2">
                   <BsFileCheck fontSize="18px" />
                   <Text m="0">Final Quiz </Text>
                 </Flex>
+                <Link
+                  fontSize="12px"
+                  onClick={() => {
+                    onOpen();
+                    setModals('quiz');
+                  }}
+                >
+                  <AddIcon mx="2" />
+                  Add Quiz
+                </Link>
               </Box>
             </Box>
           ) : (
@@ -167,6 +178,8 @@ const SingleCourse = () => {
         <ModalLesson isOpen={isOpen} onClose={onClose} setModals={setModals} />
       ) : modals === 'topics' ? (
         <ModalTopics isOpen={isOpen} onClose={onClose} setModals={setModals} />
+      ) : modals === 'quiz' ? (
+        <ModalQuiz isOpen={isOpen} onClose={onClose} setModals={setModals} />
       ) : (
         <></>
       )}

@@ -21,24 +21,20 @@ import {
   ModalOverlay,
 } from '@chakra-ui/react';
 import React from 'react';
-import Sidebar from '../../../../components/teachers/Sidebar';
 import RichTextEditor from '../../../../components/teachers/Summernote';
-import { ChevronLeftIcon } from '@chakra-ui/icons';
-import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { FileUploader } from 'react-drag-drop-files';
 
 const fileTypes = ['MP4', 'PPTX', 'PDF'];
-const fileTypesQuiz = ['PDF', 'JPG', 'JPEG'];
+const fileTypesAssignment = ['PDF', 'JPG', 'JPEG'];
 
 const ModalTopics = props => {
   const { isOpen, onClose, setModals } = props;
-  const navigate = useNavigate();
   const [file, setFile] = useState(null);
   const handleChange = file => {
     setFile(file);
   };
-  const [quiz, setQuiz] = useState(false);
+  const [assignment, setAssignment] = useState(false);
   const [topic, setTopic] = useState(0);
   return (
     <>
@@ -80,17 +76,17 @@ const ModalTopics = props => {
                 </Text>
                 <RichTextEditor />
               </FormControl>
-              <Checkbox my="5" onChange={() => setQuiz(!quiz)}>
-                Add Quiz
+              <Checkbox my="5" onChange={() => setAssignment(!assignment)}>
+                Add Assignment
               </Checkbox>
-              {quiz ? (
+              {assignment ? (
                 <>
-                  <Text>Drop a Quiz</Text>
+                  <Text>Drop Assignment</Text>
                   <FileUploader
                     multiple={true}
                     handleChange={handleChange}
                     name="file"
-                    types={fileTypesQuiz}
+                    types={fileTypesAssignment}
                   />
                   <Text fontSize="12px">
                     {file
@@ -136,17 +132,20 @@ const ModalTopics = props => {
                         </Text>
                         <RichTextEditor />
                       </FormControl>
-                      <Checkbox onChange={() => setQuiz(!quiz)} my="5">
-                        Add Quiz
+                      <Checkbox
+                        onChange={() => setAssignment(!assignment)}
+                        my="5"
+                      >
+                        Add Assignment
                       </Checkbox>
-                      {quiz ? (
+                      {assignment ? (
                         <>
-                          <Text>Drop a Quiz</Text>
+                          <Text>Drop Assignment</Text>
                           <FileUploader
                             multiple={true}
                             handleChange={handleChange}
                             name="file"
-                            types={fileTypesQuiz}
+                            types={fileTypesAssignment}
                           />
                           <Text fontSize="12px">
                             {file
@@ -164,12 +163,12 @@ const ModalTopics = props => {
                 <></>
               )}
               <Flex align="center" justify="space-between">
-                <Divider borderColor="#2c698d" w="45%" />
+                <Divider borderColor="#2c698d" w="40%" />
 
                 <Link fontSize="12px" onClick={() => setTopic(topic + 1)}>
                   Add Topics
                 </Link>
-                <Divider borderColor="#2c698d" w="45%" />
+                <Divider borderColor="#2c698d" w="40%" />
               </Flex>
             </VStack>
           </ModalBody>

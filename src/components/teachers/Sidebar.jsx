@@ -24,7 +24,7 @@ import { FiHome, FiMenu } from 'react-icons/fi';
 import { RiFileList2Line } from 'react-icons/ri';
 import { IconType } from 'react-icons';
 import { ReactText } from 'react';
-import { BsDoorOpenFill, BsBook } from 'react-icons/bs';
+import { BsDoorOpenFill, BsBook, BsFileCheck } from 'react-icons/bs';
 import { BiUser } from 'react-icons/bi';
 import { AiOutlineSnippets } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
@@ -37,8 +37,8 @@ const LinkItems: Array<LinkItemProps> = [
   { name: 'Course', icon: BsBook, link: '/teacher/courses' },
   { name: 'Lessons', icon: AiOutlineSnippets, link: '/teacher/lessons' },
   { name: 'Topics', icon: RiFileList2Line, link: '/teacher/topics' },
-  { name: 'Users', icon: BiUser },
-  // { name: 'Favourites', icon: FiStar },
+  // { name: 'Users', icon: BiUser },
+  { name: 'Quiz', icon: BsFileCheck, link: '/teacher/quiz' },
   { name: 'Logout', icon: BsDoorOpenFill, link: '/login' },
 ];
 
@@ -91,7 +91,10 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          Logo
+          <Image
+            src="https://demo.learndash.com/wp-content/uploads/2022/04/learndash-demo-logo-1.svg"
+            alt="img-logo"
+          />
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
@@ -163,14 +166,9 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       bg={useColorModeValue('white', 'gray.900')}
       borderBottomWidth="1px"
       borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
-      justifyContent="space-between"
+      justifyContent="right"
       {...rest}
     >
-      <Image
-        src="https://demo.learndash.com/wp-content/uploads/2022/04/learndash-demo-logo-1.svg"
-        alt="img-logo"
-      />
-
       <Popover islazy trigger={'hover'}>
         <PopoverTrigger>
           <Link>Hi, User1</Link>
