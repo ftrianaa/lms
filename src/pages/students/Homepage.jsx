@@ -18,8 +18,10 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { EmailIcon, SearchIcon } from '@chakra-ui/icons';
+import { useNavigate } from 'react-router-dom';
 
 const Homepage = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Header />
@@ -108,6 +110,7 @@ const Homepage = () => {
                 bgColor="#2c698d"
                 colorScheme="blue"
                 w="100%"
+                onClick={() => navigate('/courses')}
               >
                 Enroll
               </Button>
@@ -135,6 +138,7 @@ const Homepage = () => {
                 bgColor="#2c698d"
                 colorScheme="blue"
                 w="100%"
+                onClick={() => navigate('/courses')}
               >
                 Enroll
               </Button>
@@ -162,6 +166,7 @@ const Homepage = () => {
                 bgColor="#2c698d"
                 colorScheme="blue"
                 w="100%"
+                onClick={() => navigate('/courses')}
               >
                 Enroll
               </Button>
