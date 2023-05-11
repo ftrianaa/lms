@@ -26,6 +26,7 @@ import { IconType } from 'react-icons';
 import { ReactText } from 'react';
 import { BsDoorOpenFill, BsBook, BsFileCheck } from 'react-icons/bs';
 import { BiUser } from 'react-icons/bi';
+import { FaTasks } from 'react-icons/fa';
 import { AiOutlineSnippets } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
 interface LinkItemProps {
@@ -37,7 +38,7 @@ const LinkItems: Array<LinkItemProps> = [
   { name: 'Course', icon: BsBook, link: '/teacher/courses' },
   { name: 'Lessons', icon: AiOutlineSnippets, link: '/teacher/lessons' },
   { name: 'Topics', icon: RiFileList2Line, link: '/teacher/topics' },
-  // { name: 'Users', icon: BiUser },
+  { name: 'Assignment', icon: FaTasks, link: '/teacher/assignment' },
   { name: 'Quiz', icon: BsFileCheck, link: '/teacher/quiz' },
   { name: 'Logout', icon: BsDoorOpenFill, link: '/login' },
 ];

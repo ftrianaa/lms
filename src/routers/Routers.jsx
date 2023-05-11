@@ -27,6 +27,7 @@ import EditCoursesPage from '../pages/teachers/Dashboard/Courses/EditCourses';
 import Topics from '../pages/teachers/Dashboard/Topics/Topics';
 import SingleCoursePage from '../pages/teachers/Dashboard/Courses/SingleCourse';
 import QuizPage from '../pages/teachers/Dashboard/Quiz/Quiz';
+import AssignmentPage from '../pages/teachers/Dashboard/Assignment/Assignment';
 
 const Routers = () => {
   return (
@@ -64,6 +65,8 @@ const Routers = () => {
       <Route path="/teacher/users/create" element={<CreateUsersPage />} />
 
       <Route path="/teacher/quiz" element={<QuizPage />} />
+
+      <Route path="/teacher/assignment" element={<AssignmentPage />} />
     </Routes>
   );
 };
