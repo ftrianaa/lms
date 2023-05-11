@@ -93,7 +93,11 @@ const Courses = () => {
         </Link>
       </Flex>
       <Box>
-        <Flex gap="2">
+        <Flex
+          gap="2"
+          onClick={() => navigate('/teacher/courses/english')}
+          cursor="pointer"
+        >
           <Heading>01</Heading>
           <Heading fontWeight="bold">English</Heading>
         </Flex>
@@ -193,7 +197,7 @@ const Courses = () => {
             )}
           </Flex>
         </Card>
-        {topic >= 1 ? (
+        {/* {topic >= 1 ? (
           Array.from(Array(topic), (e, i) => (
             <Box key={i} my="5">
               <Flex gap="2">
@@ -309,15 +313,8 @@ const Courses = () => {
           ))
         ) : (
           <></>
-        )}
-        <Flex align="center" justify="space-between">
-          <Divider borderColor="#2c698d" w="45%" />
+        )} */}
 
-          <Link fontSize="12px" onClick={() => setTopic(topic + 1)}>
-            Add Courses
-          </Link>
-          <Divider borderColor="#2c698d" w="45%" />
-        </Flex>
         {/* <TableContainer>
           <Table size="sm">
             <Thead>
@@ -381,6 +378,14 @@ const Courses = () => {
           </Table>
         </TableContainer> */}
       </Box>
+      {/* <Flex align="center" justify="space-between">
+        <Divider borderColor="#2c698d" w="45%" />
+
+        <Link fontSize="12px" onClick={() => setTopic(topic + 1)}>
+          Add Courses
+        </Link>
+        <Divider borderColor="#2c698d" w="45%" />
+      </Flex> */}
     </>
   );
 };
