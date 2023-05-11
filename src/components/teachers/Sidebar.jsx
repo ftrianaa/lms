@@ -19,12 +19,18 @@ import {
   PopoverContent,
   PopoverArrow,
   PopoverBody,
+  Circle,
 } from '@chakra-ui/react';
 import { FiHome, FiMenu } from 'react-icons/fi';
 import { RiFileList2Line } from 'react-icons/ri';
 import { IconType } from 'react-icons';
 import { ReactText } from 'react';
-import { BsDoorOpenFill, BsBook, BsFileCheck } from 'react-icons/bs';
+import {
+  BsDoorOpenFill,
+  BsBook,
+  BsFileCheck,
+  BsEnvelope,
+} from 'react-icons/bs';
 import { BiUser } from 'react-icons/bi';
 import { FaTasks } from 'react-icons/fa';
 import { AiOutlineSnippets } from 'react-icons/ai';
@@ -169,7 +175,14 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
       justifyContent="right"
       {...rest}
+      gap="5"
     >
+      <Flex gap="1" onClick={() => navigate('/teacher/inbox')} cursor="pointer">
+        <BsEnvelope fontSize="20px" />
+        <sup>
+          <Text>1</Text>
+        </sup>
+      </Flex>
       <Popover islazy trigger={'hover'}>
         <PopoverTrigger>
           <Link>Hi, User1</Link>

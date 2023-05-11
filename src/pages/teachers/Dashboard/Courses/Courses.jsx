@@ -80,7 +80,6 @@ const Courses = () => {
           Showing 1 courses
         </Tag>
         <Link
-          color="white"
           // bgColor="#2c698d"
           my="5"
           fontSize="14px"
