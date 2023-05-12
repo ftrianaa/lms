@@ -30,7 +30,7 @@ import { FiMoreHorizontal } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
 import { AddIcon, SearchIcon } from '@chakra-ui/icons';
 
-const TopicsPages = () => {
+const Sections = () => {
   const navigate = useNavigate();
   return (
     <>
@@ -46,10 +46,7 @@ const TopicsPages = () => {
           <option>All courses</option>
           <option>New courses</option>
         </Select>
-        <Select w="fit-content">
-          <option>All lessons</option>
-          <option>New lessons</option>
-        </Select>
+
         <Select w="fit-content">
           <option>All authors</option>
           <option>New authors</option>
@@ -57,16 +54,16 @@ const TopicsPages = () => {
       </Flex>
       <Flex align="center" justify="space-between">
         <Tag color="white" bgColor="#2c698d" my="5">
-          Showing 1 topics
+          Showing 1 Sections
         </Tag>
         <Link
           my="5"
           color="#2c698d"
           fontSize="14px"
-          onClick={() => navigate('/teacher/topics/create')}
+          onClick={() => navigate('/teacher/Sections/create')}
         >
           <AddIcon mx="2" />
-          Add Topics
+          Add Sections
         </Link>
       </Flex>
       <Box>
@@ -80,7 +77,6 @@ const TopicsPages = () => {
                 <Th>Title</Th>
                 <Th>Author</Th>
                 <Th>Course</Th>
-                <Th>Lessons</Th>
                 <Th>Description</Th>
                 <Th>Created</Th>
                 <Th>Actions</Th>
@@ -91,22 +87,19 @@ const TopicsPages = () => {
                 <Td>
                   <Checkbox />
                 </Td>
-                <Td>Present Tense</Td>
+                <Td>Grammar</Td>
                 <Td>User1</Td>
                 <Td>
                   <Link>English</Link>
                 </Td>
-                <Td>
-                  <Link>Grammar</Link>
-                </Td>
-                <Td>We learn about present tense...</Td>
+                <Td>We learn about grammar...</Td>
                 <Td>{new Date().toLocaleString() + ''}</Td>
                 <Td>
                   <Flex gap="2">
                     <Tooltip label="Edit" fontSize="md">
                       <Button
                         size="sm"
-                        onClick={() => navigate('/teacher/topics/edit')}
+                        onClick={() => navigate('/teacher/Sections/edit')}
                       >
                         <TfiPencil />
                       </Button>
@@ -140,11 +133,11 @@ const TopicsPages = () => {
   );
 };
 
-const Topics = () => {
+const SectionsPage = () => {
   return (
     <Sidebar>
-      <TopicsPages />
+      <Sections />
     </Sidebar>
   );
 };
-export default Topics;
+export default SectionsPage;

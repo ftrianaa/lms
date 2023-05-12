@@ -28,14 +28,14 @@ import { FileUploader } from 'react-drag-drop-files';
 const fileTypes = ['MP4', 'PPTX', 'PDF'];
 const fileTypesAssignment = ['PDF', 'JPG', 'JPEG'];
 
-const ModalTopics = props => {
+const ModalLessons = props => {
   const { isOpen, onClose, setModals } = props;
   const [file, setFile] = useState(null);
   const handleChange = file => {
     setFile(file);
   };
   const [assignment, setAssignment] = useState(false);
-  const [topic, setTopic] = useState(0);
+  const [lesson, setLesson] = useState(0);
   return (
     <>
       <Modal
@@ -47,7 +47,7 @@ const ModalTopics = props => {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Add Topic</ModalHeader>
+          <ModalHeader>Add Lesson</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <VStack align="left">
@@ -57,7 +57,7 @@ const ModalTopics = props => {
               </FormControl>
               <FormControl>
                 <FormLabel>Description</FormLabel>
-                <Input type="text" placeholder="Description of Topic" />
+                <Input type="text" placeholder="Description of Lesson" />
               </FormControl>
               <FormControl>
                 <FormLabel>Content</FormLabel>
@@ -98,8 +98,8 @@ const ModalTopics = props => {
                 <></>
               )}
 
-              {topic >= 1 ? (
-                Array.from(Array(topic), (e, i) => (
+              {lesson >= 1 ? (
+                Array.from(Array(lesson), (e, i) => (
                   <Box key={i}>
                     <Flex align="center" justify="space-between">
                       <Divider borderColor="#2c698d" w="45%" />
@@ -113,7 +113,10 @@ const ModalTopics = props => {
                       </FormControl>
                       <FormControl>
                         <FormLabel>Description</FormLabel>
-                        <Input type="text" placeholder="Description of Topic" />
+                        <Input
+                          type="text"
+                          placeholder="Description of Lesson"
+                        />
                       </FormControl>
                       <FormControl>
                         <FormLabel>Content</FormLabel>
@@ -165,8 +168,8 @@ const ModalTopics = props => {
               <Flex align="center" justify="space-between">
                 <Divider borderColor="#2c698d" w="40%" />
 
-                <Link fontSize="12px" onClick={() => setTopic(topic + 1)}>
-                  Add Topics
+                <Link fontSize="12px" onClick={() => setLesson(lesson + 1)}>
+                  Add Lessons
                 </Link>
                 <Divider borderColor="#2c698d" w="40%" />
               </Flex>
@@ -192,4 +195,4 @@ const ModalTopics = props => {
   );
 };
 
-export default ModalTopics;
+export default ModalLessons;

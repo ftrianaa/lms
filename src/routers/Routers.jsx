@@ -19,15 +19,15 @@ import UserPage from '../pages/teachers/Dashboard/Users/Users';
 import CreateUsersPage from '../pages/teachers/Dashboard/Users/CreateUsers';
 import CoursesPages from '../pages/teachers/Dashboard/Courses/Courses';
 import CreateCoursesPage from '../pages/teachers/Dashboard/Courses/CreateCourses';
-import CreateLessonsPage from '../pages/teachers/Dashboard/Lessons/CreateLessons';
-import CreateTopicsPage from '../pages/teachers/Dashboard/Topics/CreateTopics';
-import LessonsPage from '../pages/teachers/Dashboard/Lessons/Lessons';
-import EditLessonsPage from '../pages/teachers/Dashboard/Lessons/EditLessons';
+import CreateSectionsPage from '../pages/teachers/Dashboard/Sections/CreateSections';
+import SectionsPage from '../pages/teachers/Dashboard/Sections/Sections';
+import EditSectionsPage from '../pages/teachers/Dashboard/Sections/EditSections';
 import EditCoursesPage from '../pages/teachers/Dashboard/Courses/EditCourses';
-import Topics from '../pages/teachers/Dashboard/Topics/Topics';
+import Lessons from '../pages/teachers/Dashboard/Lessons/Lessons';
 import SingleCoursePage from '../pages/teachers/Dashboard/Courses/SingleCourse';
 import QuizPage from '../pages/teachers/Dashboard/Quiz/Quiz';
 import AssignmentPage from '../pages/teachers/Dashboard/Assignment/Assignment';
+import CreateLessonsPage from '../pages/teachers/Dashboard/Lessons/CreateLessons';
 
 const Routers = () => {
   return (
@@ -54,12 +54,12 @@ const Routers = () => {
       <Route path="/teacher/courses/edit" element={<EditCoursesPage />} />
 
       {/* course - section - lesson */}
-      <Route path="/teacher/lessons" element={<LessonsPage />} />
-      <Route path="/teacher/lessons/create" element={<CreateLessonsPage />} />
-      <Route path="/teacher/lessons/edit" element={<EditLessonsPage />} />
+      <Route path="/teacher/sections" element={<SectionsPage />} />
+      <Route path="/teacher/sections/create" element={<CreateSectionsPage />} />
+      <Route path="/teacher/sections/edit" element={<EditSectionsPage />} />
 
-      <Route path="/teacher/topics" element={<Topics />} />
-      <Route path="/teacher/topics/create" element={<CreateTopicsPage />} />
+      <Route path="/teacher/lessons" element={<Lessons />} />
+      <Route path="/teacher/lessons/create" element={<CreateLessonsPage />} />
 
       <Route path="/teacher/users" element={<UserPage />} />
       <Route path="/teacher/users/create" element={<CreateUsersPage />} />

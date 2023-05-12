@@ -97,7 +97,6 @@ const Courses = () => {
           onClick={() => navigate('/teacher/courses/english')}
           cursor="pointer"
         >
-          <Heading>01</Heading>
           <Heading fontWeight="bold">English</Heading>
         </Flex>
         <Card p="5" gap="5" display="flex" m="0">

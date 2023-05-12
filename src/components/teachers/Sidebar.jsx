@@ -42,8 +42,8 @@ interface LinkItemProps {
 const LinkItems: Array<LinkItemProps> = [
   { name: 'Dashboard', icon: FiHome, link: '/teacher/dashboard' },
   { name: 'Course', icon: BsBook, link: '/teacher/courses' },
-  { name: 'Lessons', icon: AiOutlineSnippets, link: '/teacher/lessons' },
-  { name: 'Topics', icon: RiFileList2Line, link: '/teacher/topics' },
+  { name: 'Lessons', icon: AiOutlineSnippets, link: '/teacher/sections' },
+  { name: 'Lessons', icon: RiFileList2Line, link: '/teacher/lessons' },
   { name: 'Assignment', icon: FaTasks, link: '/teacher/assignment' },
   { name: 'Quiz', icon: BsFileCheck, link: '/teacher/quiz' },
   { name: 'Logout', icon: BsDoorOpenFill, link: '/login' },

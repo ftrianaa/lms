@@ -30,7 +30,7 @@ import { FiMoreHorizontal } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
 import { AddIcon, SearchIcon } from '@chakra-ui/icons';
 
-const Lessons = () => {
+const LessonsPages = () => {
   const navigate = useNavigate();
   return (
     <>
@@ -46,7 +46,10 @@ const Lessons = () => {
           <option>All courses</option>
           <option>New courses</option>
         </Select>
-
+        <Select w="fit-content">
+          <option>All lessons</option>
+          <option>New lessons</option>
+        </Select>
         <Select w="fit-content">
           <option>All authors</option>
           <option>New authors</option>
@@ -63,7 +66,7 @@ const Lessons = () => {
           onClick={() => navigate('/teacher/lessons/create')}
         >
           <AddIcon mx="2" />
-          Add lessons
+          Add Lessons
         </Link>
       </Flex>
       <Box>
@@ -77,6 +80,7 @@ const Lessons = () => {
                 <Th>Title</Th>
                 <Th>Author</Th>
                 <Th>Course</Th>
+                <Th>Lessons</Th>
                 <Th>Description</Th>
                 <Th>Created</Th>
                 <Th>Actions</Th>
@@ -87,12 +91,15 @@ const Lessons = () => {
                 <Td>
                   <Checkbox />
                 </Td>
-                <Td>Grammar</Td>
+                <Td>Present Tense</Td>
                 <Td>User1</Td>
                 <Td>
                   <Link>English</Link>
                 </Td>
-                <Td>We learn about grammar...</Td>
+                <Td>
+                  <Link>Grammar</Link>
+                </Td>
+                <Td>We learn about present tense...</Td>
                 <Td>{new Date().toLocaleString() + ''}</Td>
                 <Td>
                   <Flex gap="2">
@@ -133,11 +140,11 @@ const Lessons = () => {
   );
 };
 
-const LessonsPage = () => {
+const Lessons = () => {
   return (
     <Sidebar>
-      <Lessons />
+      <LessonsPages />
     </Sidebar>
   );
 };
-export default LessonsPage;
+export default Lessons;

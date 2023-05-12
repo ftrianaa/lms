@@ -23,8 +23,8 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { BsCircle, BsFileCheck, BsFileText } from 'react-icons/bs';
 import { useState } from 'react';
-import ModalLesson from '../Lessons/ModalLesson';
-import ModalTopics from '../Topics/ModalTopics';
+import ModalSections from '../Sections/ModalSections';
+import ModalTopics from '../Lessons/ModalLessons';
 import ModalQuiz from '../Quiz/ModalQuiz';
 
 const SingleCourse = () => {
@@ -166,12 +166,12 @@ const SingleCourse = () => {
           <Link
             fontSize="12px"
             onClick={() => {
-              setModals('lesson');
+              setModals('Section');
               onOpen();
             }}
           >
             <AddIcon mx="2" />
-            Add Lesson
+            Add Section
           </Link>
         </Card>
       </Box>
@@ -185,8 +185,12 @@ const SingleCourse = () => {
           Done
         </Button>
       </Flex>
-      {modals === 'lesson' ? (
-        <ModalLesson isOpen={isOpen} onClose={onClose} setModals={setModals} />
+      {modals === 'Section' ? (
+        <ModalSections
+          isOpen={isOpen}
+          onClose={onClose}
+          setModals={setModals}
+        />
       ) : modals === 'topics' ? (
         <ModalTopics isOpen={isOpen} onClose={onClose} setModals={setModals} />
       ) : modals === 'quiz' ? (

@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 
-const ModalLesson = props => {
+const ModalSections = props => {
   const { isOpen, onClose, setModals } = props;
   return (
     <>
@@ -27,16 +27,16 @@ const ModalLesson = props => {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Add Lesson</ModalHeader>
+          <ModalHeader>Add Section</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <FormControl>
-              <FormLabel>Lesson Title</FormLabel>
+              <FormLabel>Sections Title</FormLabel>
               <Input type="text" placeholder="e.g Grammar" />
             </FormControl>
             <FormControl>
               <FormLabel>Description</FormLabel>
-              <Textarea placeholder="Description of Lesson" />
+              <Textarea placeholder="Description of Section" />
             </FormControl>
           </ModalBody>
 
@@ -59,4 +59,4 @@ const ModalLesson = props => {
   );
 };
 
-export default ModalLesson;
+export default ModalSections;
