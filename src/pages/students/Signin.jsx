@@ -33,6 +33,7 @@ const Signin = () => {
 
 	const handleLogin = () => {
 		setLoading(true)
+		console.log(email, password)
 		signInWithEmailAndPassword(authFirebase, email, password).then(response => {
 			navigate('/')
 			localStorage.setItem('user', JSON.stringify(response.user))

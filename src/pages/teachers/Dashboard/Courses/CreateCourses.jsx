@@ -8,13 +8,14 @@ import {
   Input,
   Link,
 } from '@chakra-ui/react';
-import React from 'react';
+import React, { useState } from 'react';
 import Sidebar from '../../../../components/teachers/Sidebar';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { useNavigate } from 'react-router-dom';
 
-const EditCourses = () => {
+const CreateCourses = () => {
   const navigate = useNavigate();
+  const [courseName, setCourseName] = useState('');
   return (
     <Box>
       <Box my="5">
@@ -30,7 +31,11 @@ const EditCourses = () => {
       <Container>
         <FormControl>
           <FormLabel>Course name</FormLabel>
-          <Input type="text" placeholder="e.g English" />
+          <Input
+            type="text"
+            placeholder="e.g English"
+            onChange={e => setCourseName(e.target.value)}
+          />
         </FormControl>
         <Flex justify="right">
           <Button
@@ -41,20 +46,20 @@ const EditCourses = () => {
             color="white"
             bgColor="#2c698d"
             colorScheme="blue"
-            onClick={() => navigate('/teacher/lessons/create')}
+            onClick={() => navigate(`/teacher/courses/${courseName}`)}
           >
-            Save
+            Confirm
           </Button>
         </Flex>
       </Container>
     </Box>
   );
 };
-const EditCoursesPage = () => {
+const CreateCoursesPage = () => {
   return (
     <Sidebar>
-      <EditCourses />
+      <CreateCourses />
     </Sidebar>
   );
 };
-export default EditCoursesPage;
+export default CreateCoursesPage;

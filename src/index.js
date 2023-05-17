@@ -5,19 +5,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
-import { AppProvider } from '../src/context/context'
+import { AuthProvider } from './context/Context';
  
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
 
 root.render(
 	<BrowserRouter>
-		<ChakraProvider theme={theme}>
+		<ChakraProvider>
 			<StrictMode>
 				<ColorModeScript />
-				<AppProvider>
+				<AuthProvider>
 					<App />
-				</AppProvider>
+				</AuthProvider>
 			</StrictMode>
 		</ChakraProvider>
 	</BrowserRouter>
