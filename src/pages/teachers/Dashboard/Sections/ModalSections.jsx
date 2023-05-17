@@ -12,10 +12,14 @@ import {
   ModalOverlay,
   Textarea,
 } from '@chakra-ui/react';
-import React from 'react';
+import React, { useState } from 'react';
 
 const ModalSections = props => {
-  const { isOpen, onClose, setModals } = props;
+  const { isOpen, onClose, setModals, saveSection } = props;
+  const [sec, setSec] = useState({
+    title: '',
+    description: '',
+  });
   return (
     <>
       <Modal
@@ -32,11 +36,18 @@ const ModalSections = props => {
           <ModalBody>
             <FormControl>
               <FormLabel>Sections Title</FormLabel>
-              <Input type="text" placeholder="e.g Grammar" />
+              <Input
+                type="text"
+                placeholder="e.g Grammar"
+                onChange={e => setSec({ ...sec, title: e.target.value })}
+              />
             </FormControl>
             <FormControl>
               <FormLabel>Description</FormLabel>
-              <Textarea placeholder="Description of Section" />
+              <Textarea
+                placeholder="Description of Section"
+                onChange={e => setSec({ ...sec, description: e.target.value })}
+              />
             </FormControl>
           </ModalBody>
 
@@ -51,7 +62,17 @@ const ModalSections = props => {
             >
               Close
             </Button>
-            <Button colorScheme="green">Save</Button>
+            <Button
+              colorScheme="green"
+              onClick={() => {
+                saveSection(sec);
+
+                onClose();
+                setModals('');
+              }}
+            >
+              Save
+            </Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
